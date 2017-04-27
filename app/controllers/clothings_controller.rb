@@ -18,6 +18,11 @@ class ClothingsController < ApplicationController
      Clothing.create(image: clothing_params[:image], text: clothing_params[:text], user_id: current_user.id)
   end
 
+    private
+    def clothing_params
+      params.permit(:image, :text)
+    end
+
    def update  #投稿完了の画面
      clothing = Clothing.find(params[:id])
      clothing.update if clothing.user_id == current_user.id
