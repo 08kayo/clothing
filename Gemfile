@@ -50,4 +50,6 @@ end
   gem 'devise'
   gem 'acts-as-taggable-on', '~> 3.4'
   gem 'kaminari'
-
+  gem 'carrierwave'
+  gem 'fog'
+  gem 'jquery-ui-rails'

@@ -1,0 +1,9 @@
+  <div class="contents row" >
+    <p><%= @nickname %>さんの投稿一覧</p>
+    <% @wears.each do |wear| %>
+      <div class="content_post" style="background-image: url(<%= wear.image %>);">
+        <%= simple_format(wear.text) %>
+      </div>
+    <% end %>
+    <%= paginate(@wears) %>
+  </div>

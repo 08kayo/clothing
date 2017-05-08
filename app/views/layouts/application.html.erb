@@ -4,28 +4,74 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=Edge,chrome=1'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Profy</title>
+    <title>たいとる</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
+
   <body>
     <script type='text/javascript' charset='utf-8'>
       $(function(){
-        $.material.init();
+      $.material.init();
       });
     </script>
     <%= render partial: 'common/header' %>
-    <div class='container'>
-      <div class='row'>
-        <div class='col-lg-12'>
-          <%= bootstrap_flash %>
-          <%= yield %>
+
+   <header class="header">
+    <div class="header__bar row">
+      <h1 class="grid-6"><a href="/"></a></h1>
+      <% if user_signed_in? %>
+        <div class="user_nav grid-6">
+
         </div>
-      </div>
+      <% else %>
+        <div class="grid-6">
+          <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+          <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+        </div>
+      <% end %>
+    </div>
+   </header>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+   <%= yield %>
+
       <footer class='row text-center'>
-        <p>clothing</p>
       </footer>
     </div>
+
+    <div id="tabmenu">
+    <ul style="list-style:none">
+        <ul>
+        <li>
+        <a href="wears"><i class="fa fa-home"></i><span class="category-name">ホーム</span></a>
+        </li>
+        <li>
+        <a href="#"><i class="fa fa-search"></i><span class="category-name"> 検索</span></a>
+        </li>
+        <li>
+        <a href="favorite/どこに飛ぶのか書く"><i class="fa fa-star"></i><span class="category- name">お気に入り</span></a> 
+        </li>
+        <li>
+        <a href="wears/new"><i class="fa fa-camera"></i><span class="category- name">コーデ登録</span></a> 
+        </li>
+        <li>
+        <a href="user"><i class="fa fa-key fa-rotate-270"></i><span class= "category-name">設定</span></a>
+        </li>
+        </ul>
+    </div>
+    <div id="tab_contents">
+        <ul>
+        </ul>
+    </div>
+</div>
+
+
+    <script src="iscroll.js"></script>
   </body>
 </html>

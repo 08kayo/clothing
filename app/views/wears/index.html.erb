@@ -1,0 +1,24 @@
+<div class="contents row">
+  <% @wears.each do |wear| %>
+    <div class="content_post" style="background-image: url(<%= wear.image %>);">
+      <% if user_signed_in? && current_user.id == wear.user_id %>
+        <div class="more">
+          <span><%= image_tag 'arrow_top.png' %></span>
+          <ul class="more_list">
+          <ul style="list-style:none">
+
+            <li>
+              <%= link_to '削除', "/wears/#{wear.id}", method: :delete %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+        <%= simple_format(wear.text) %>
+      <span class="name">
+        <a href="/users/<%= wear.user_id %>">
+          <span>投稿者</span><%= wear.user.nickname %>
+        </a>
+      </span>
+    </div>
+  <% end %>
+</div>
