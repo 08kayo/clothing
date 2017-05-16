@@ -71,7 +71,7 @@ body {
 /*
  * Remove the gray background color from active links in IE 10. */
 a {
-  background: transparent;
+  background: #C0C0C0;
 }
 
 /*
@@ -610,3 +610,7 @@ ul li {
   }
 }
 /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+
+li {
+list-style-type: none;
+}

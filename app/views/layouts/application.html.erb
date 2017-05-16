@@ -1,77 +1,78 @@
 <!DOCTYPE html>
 <html lang='ja'>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=Edge,chrome=1'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>たいとる</title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=Edge,chrome=1'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>おとこーで -OTOCOORDE-</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  </head>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+</head>
 
-  <body>
-    <script type='text/javascript' charset='utf-8'>
-      $(function(){
+<body>
+
+  <script type='text/javascript' charset='utf-8'>
+    $(function(){
       $.material.init();
-      });
-    </script>
-    <%= render partial: 'common/header' %>
+    });
+  </script>
+  <%= render partial: 'common/header' %>
 
-   <header class="header">
+  <header class="header">
     <div class="header__bar row">
       <h1 class="grid-6"><a href="/"></a></h1>
       <% if user_signed_in? %>
-        <div class="user_nav grid-6">
+      <div class="user_nav grid-6">
 
-        </div>
+      </div>
       <% else %>
-        <div class="grid-6">
+      <div class="grid-6">
+        <div align="right">
+        <ul style="list-style:none">
           <%= link_to "ログイン", new_user_session_path, class: 'post' %>
           <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+        </ul>
         </div>
+      </div>
       <% end %>
     </div>
-   </header>
+  </header>
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-   <%= yield %>
+  <div class='wrap'>
+    <%= yield %>
+  </div>
 
-      <footer class='row text-center'>
-      </footer>
-    </div>
 
+  <footer class='row text-center'>
     <div id="tabmenu">
-    <ul style="list-style:none">
-        <ul>
+      <ul style="list-style:none">
         <li>
-        <a href="wears"><i class="fa fa-home"></i><span class="category-name">ホーム</span></a>
+          <a href="http://localhost:3000/"><i class="fa fa-home"></i><span class="category-name">ホーム</span></a>
         </li>
         <li>
-        <a href="#"><i class="fa fa-search"></i><span class="category-name"> 検索</span></a>
+          <a href="http://localhost:3000/wears/search"><i class="fa fa-search"></i><span class="category-name"> 検索</span></a>
         </li>
         <li>
-        <a href="favorite/どこに飛ぶのか書く"><i class="fa fa-star"></i><span class="category- name">お気に入り</span></a> 
+          <a href="http://localhost:3000/users/favorite"><i class="fa fa-star"></i><span class="category- name">お気に入り</span></a> 
         </li>
         <li>
-        <a href="wears/new"><i class="fa fa-camera"></i><span class="category- name">コーデ登録</span></a> 
+          <a href="http://localhost:3000/wears/new"><i class="fa fa-camera"></i><span class="category- name">コーデ登録</span></a>
         </li>
         <li>
-        <a href="user"><i class="fa fa-key fa-rotate-270"></i><span class= "category-name">設定</span></a>
+          <a href="http://localhost:3000/users/<%= current_user.id if current_user %>"><i class="fa fa-key fa-rotate-270"></i><span class= "category-name">マイページ</span></a>
         </li>
-        </ul>
+      </ul>
     </div>
-    <div id="tab_contents">
-        <ul>
-        </ul>
-    </div>
-</div>
+
+  </footer>
 
 
-    <script src="iscroll.js"></script>
-  </body>
+
+  <script src="iscroll.js"></script>
+</body>
 </html>

@@ -1,24 +1,41 @@
-<div class="contents row">
-  <% @wears.each do |wear| %>
-    <div class="content_post" style="background-image: url(<%= wear.image %>);">
-      <% if user_signed_in? && current_user.id == wear.user_id %>
-        <div class="more">
-          <span><%= image_tag 'arrow_top.png' %></span>
-          <ul class="more_list">
-          <ul style="list-style:none">
+<h1>おとこーで -OTOCOORDE-</h1>
 
-            <li>
-              <%= link_to '削除', "/wears/#{wear.id}", method: :delete %>
-            </li>
-          </ul>
-        </div>
-      <% end %>
-        <%= simple_format(wear.text) %>
+
+<h2>今日のFlickrコーデ</h2>
+<div class="contents row">
+  <%= @url %>
+  <%= image_tag @url %>
+
+  <div align="center">
+  <% @images.each do |image| %>
+  <%= image_tag (FlickRaw.url image), :size => "250x250" %>
+  <% end %>
+  </div>
+
+<h2>ユーザーのコーデ</h2>
+  <div align="center">
+  <% @wears.each do |wear| %>
+  <div class="content_post" >
+    <%= image_tag wear.image, :size => "250x250" %>
+    <% if user_signed_in? && current_user.id == wear.user_id %>
+    <div class="more">
+
+      <ul class="more_list">
+        <!-- <ul style="list-style:none"> -->
+      </ul>
+    </div>
+    <% end %>
+    <ul style="list-style:none">   
+
+      <%= simple_format(wear.text) %>
       <span class="name">
         <a href="/users/<%= wear.user_id %>">
           <span>投稿者</span><%= wear.user.nickname %>
         </a>
       </span>
-    </div>
+    </ul>
+  </div>
+  </div>
   <% end %>
+</div>
 </div>

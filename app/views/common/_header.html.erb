@@ -6,19 +6,20 @@
         <span class='icon-bar'></span>
         <span class='icon-bar'></span>
       </button>
+
       <%= link_to root_path, :class => 'navbar-brand' do %>
         <%= image_tag 'logo.png' %> <small class='hidden-xs hidden-sm'>自分らしい着まわしを見つけよう</small>
       <% end %>
-      <div class='navbar-collapse collapse navbar-responsive-collapse navbar-right'>
-        <ul class='nav navbar-nav'>
-          <li><%= link_to 'HOME', root_path %></li>
-          <li class='dropdown'>
-            <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-expanded='false'>アカウント <span class='caret'></span></a>
+      <div class='navbar-collapse collapse navbar-responsive-collapse navbar-right' >
+
             <ul class='dropdown-menu' role='menu'>
-            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+    <ul style="list-style:none">
+            <li><div align="right"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div>
+            </li>
             </ul>
           </li>
         </ul>
+
       </div>
     </div>
   </div>

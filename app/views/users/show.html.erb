@@ -1,9 +1,23 @@
   <div class="contents row" >
-    <p><%= @nickname %>さんの投稿一覧</p>
+    <h2><%= @nickname %>さんの投稿一覧(ページ)</h2>
     <% @wears.each do |wear| %>
-      <div class="content_post" style="background-image: url(<%= wear.image %>);">
+      <tr>
+        <td><%= image_tag wear.image.url, :size => '250x250' %></td>
         <%= simple_format(wear.text) %>
-      </div>
+    <ul style="list-style:none">
+        <li><%= link_to '削除', "/wears/#{wear.id}", method: :delete %></li>
+        
+      </tr>
     <% end %>
-    <%= paginate(@wears) %>
   </div>
+
+    <tbody>
+    <!-- 削除リンクの為にindex付きのメソッドを使用 -->
+    <% @user.wears.each_with_index do |wear, i| %>
+      <tr>
+        <td><%= link_to "削除",favorite_path(@favorites[i][:id]), method: :delete %></td>
+        <td><%= wear.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
