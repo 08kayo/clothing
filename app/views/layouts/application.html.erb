@@ -50,19 +50,29 @@
 
 
   <footer class='row text-center'>
+<%= evil_icons_sprite %>
     <div id="tabmenu">
       <ul style="list-style:none">
         <li>
+        <%= evil_icon 'ei-archive', size: :m %><br>
           <%= link_to 'ホーム', "/wears/index", method: :get %>
         </li>
         <li>
+        <%= evil_icon 'ei-search', size: :m %><br>
           <%= link_to '検索', "/wears/search}", method: :get %>
         </li>
         <li>
-          <%= link_to 'コーデ登録', "/wears/new", method: :get %>
+        <%= evil_icon 'ei-star', size: :m %><br>
+          <%= link_to 'お気に入り', "/wears/favorite}", method: :get %>
         </li>
         <li>
-<a href="http://localhost:3000/users/<%= current_user.id if current_user %>"><i class="fa fa-key fa-rotate-270"></i><span class= "category-name">マイページ</span></a>
+        <%= evil_icon 'ei-camera', size: :m %><br>
+          <%= link_to 'コーデ登録', "/wears/new", method: :get %>
+
+        </li>
+        <li>
+        <%= evil_icon 'ei-user', size: :m %><br>
+          <a href="http://localhost:3000/users/<%= current_user.id if current_user %>"><span class= "category-name">マイページ</span></a>
 
         </li>
       </ul>

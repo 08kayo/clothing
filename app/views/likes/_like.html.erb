@@ -1,22 +1,21 @@
   <%= evil_icons_sprite %>
 
-<% if user_signed_in? %>
-<% binding.pry %>
+  <% if user_signed_in? %>
   <% if wear.like_user(current_user.id) %>
-    <%= button_to wear_like_path(like, wear_id: wear.id), method: :delete, id: "like-button", remote: true do %>
-      <%= evil_icon 'ei-star', size: :m %>
-      <span>
-        <%= wear.like_count if wear.like_count %>
-      </span>
-    <% end %>
-  <% else %>
-    <%= button_to wear_likes_path(wear), id: "like-button", remote: true do %>
-      <%= evil_icon 'ei-star', size: :m %>
-    <% end %>
-  <% end %>
-<% else %>
+  <%= button_to wear_like_path(like, wear_id: wear.id), method: :delete, id: "like-button", remote: true do %>
   <%= evil_icon 'ei-star', size: :m %>
-    <span>
-      <%= wear.like_count %>
-    </span>
-<% end %>
+  <span>
+    <%= wear.like_count if wear.like_count %>
+  </span>
+  <% end %>
+  <% else %>
+  <%= button_to wear_likes_path(wear), id: "like-button", remote: true do %>
+  <%= evil_icon 'ei-star', size: :m %>
+  <% end %>
+  <% end %>
+  <% else %>
+  <%= evil_icon 'ei-star', size: :m %>
+  <span>
+    <%= wear.like_count %>
+  </span>
+  <% end %>
