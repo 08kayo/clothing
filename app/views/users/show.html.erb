@@ -1,5 +1,5 @@
   <div class="contents row" >
-    <h2><%= @nickname %>さんの投稿一覧(ページ)</h2>
+    <h2><%= @nickname %>さんの投稿一覧</h2>
     <% @wears.each do |wear| %>
       <tr>
         <td><%= image_tag wear.image.url, :size => '250x250' %></td>
