@@ -4,7 +4,7 @@
       <%= devise_error_messages! %>
 
       <div class="field">
-        <%= f.label :ニックネーム%> <em>(6 characters maximum)</em><br />
+        <%= f.label :ニックネーム%> <em>(半角英数6文字まで)</em><br />
         <%= f.text_field :nickname, autofocus: true, maxlength: "6" %>
       </div>
 
@@ -33,7 +33,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "登録する" %>
       </div>
     <% end %>
   </div>
