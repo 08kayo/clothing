@@ -57,6 +57,8 @@ end
   gem 'omniauth-instagram'
   gem 'rakuten_web_service'
   gem 'flickraw'
+  gem 'evil_icons', github: 'outpunk/evil-icons'
+
 
   group :production do
   gem 'rails_12factor'

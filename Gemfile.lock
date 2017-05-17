@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/outpunk/evil-icons.git
+  revision: 511d3a892e70478189e0296170e95f66a5283bdf
+  specs:
+    evil_icons (1.9.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -400,6 +406,7 @@ DEPENDENCIES
   carrierwave (= 0.11.2)
   coffee-rails (~> 4.1.0)
   devise
+  evil_icons!
   flickraw
   fog
   instagram

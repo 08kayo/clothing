@@ -15,6 +15,7 @@
 <h2>ユーザーのコーデ</h2>
   <div align="center">
   <% @wears.each do |wear| %>
+  <%= render "likes/like", wear: wear %>
   <div class="content_post" >
     <%= image_tag wear.image, :size => "250x250" %>
     <% if user_signed_in? && current_user.id == wear.user_id %>

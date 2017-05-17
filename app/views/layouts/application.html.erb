@@ -4,6 +4,7 @@
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=Edge,chrome=1'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
   <title>おとこーで -OTOCOORDE-</title>
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -30,10 +31,10 @@
       <% else %>
       <div class="grid-6">
         <div align="right">
-        <ul style="list-style:none">
-          <%= link_to "ログイン", new_user_session_path, class: 'post' %>
-          <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
-        </ul>
+          <ul style="list-style:none">
+            <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+            <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+          </ul>
         </div>
       </div>
       <% end %>
@@ -52,19 +53,17 @@
     <div id="tabmenu">
       <ul style="list-style:none">
         <li>
-          <a href="http://localhost:3000/"><i class="fa fa-home"></i><span class="category-name">ホーム</span></a>
+          <%= link_to 'ホーム', "/wears/index", method: :get %>
         </li>
         <li>
-          <a href="search"><i class="fa fa-search"></i><span class="category-name"> 検索</span></a>
+          <%= link_to '検索', "/wears/search}", method: :get %>
         </li>
         <li>
-          <a href="http://localhost:3000/users/favorite"><i class="fa fa-star"></i><span class="category- name">お気に入り</span></a> 
+          <%= link_to 'コーデ登録', "/wears/new", method: :get %>
         </li>
         <li>
-          <a href="new"><i class="fa fa-camera"></i><span class="category- name">コーデ登録</span></a>
-        </li>
-        <li>
-          <a href="http://localhost:3000/users/<%= current_user.id if current_user %>"><i class="fa fa-key fa-rotate-270"></i><span class= "category-name">マイページ</span></a>
+<a href="http://localhost:3000/users/<%= current_user.id if current_user %>"><i class="fa fa-key fa-rotate-270"></i><span class= "category-name">マイページ</span></a>
+
         </li>
       </ul>
     </div>
