@@ -58,8 +58,6 @@ end
   gem 'rakuten_web_service'
   gem 'flickraw'
   gem 'evil_icons', github: 'outpunk/evil-icons'
-  gem 'rmagick'
-
   group :production do
   gem 'rails_12factor'
   gem 'pg'
