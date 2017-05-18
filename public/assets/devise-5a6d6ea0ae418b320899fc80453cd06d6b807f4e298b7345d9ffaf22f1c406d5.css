@@ -1,0 +1,40 @@
+/* line 1, /Users/tech-camp/Desktop/clothing/app/assets/stylesheets/devise.scss */
+.field {
+  position: inherit;
+  margin: 0 auto;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  color: #FFFFFF;
+}
+
+/* line 10, /Users/tech-camp/Desktop/clothing/app/assets/stylesheets/devise.scss */
+h2 {
+  color: #FFFFFF;
+  display: block;
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* line 19, /Users/tech-camp/Desktop/clothing/app/assets/stylesheets/devise.scss */
+input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+  margin-top: 10px;
+  position: inherit;
+  align-items: flex-start;
+  text-align: center;
+  cursor: default;
+  color: #434851;
+  background-color: buttonface;
+  box-sizing: border-box;
+  padding: 2px 6px 3px;
+  border-width: 2px;
+  border-style: outset;
+  border-color: white;
+  border-image: initial;
+}
+
+/* line 35, /Users/tech-camp/Desktop/clothing/app/assets/stylesheets/devise.scss */
+div {
+  text-align: center;
+}

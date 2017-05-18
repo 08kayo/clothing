@@ -1,0 +1,45 @@
+/* line 1, /Users/tech-camp/Desktop/clothing/app/assets/stylesheets/users.scss */
+h1 {
+  font-size: 20px;
+  color: #FFFFFF;
+  font-family: sans-serif;
+  padding: 0;
+}
+
+/* line 8, /Users/tech-camp/Desktop/clothing/app/assets/stylesheets/users.scss */
+a:-webkit-any-link {
+  color: gray;
+  cursor: auto;
+  text-decoration: none;
+}
+
+/* line 15, /Users/tech-camp/Desktop/clothing/app/assets/stylesheets/users.scss */
+h2 {
+  font-size: 18px;
+  color: #FFFFFF;
+  padding: 0;
+}
+
+/* line 21, /Users/tech-camp/Desktop/clothing/app/assets/stylesheets/users.scss */
+label {
+  margin-left: 0px;
+  color: white;
+}
+
+/* line 26, /Users/tech-camp/Desktop/clothing/app/assets/stylesheets/users.scss */
+.wrap {
+  margin-left: 20px;
+}
+
+/* line 30, /Users/tech-camp/Desktop/clothing/app/assets/stylesheets/users.scss */
+.file input {
+  display: none;
+  color: white;
+}
+
+/* line 36, /Users/tech-camp/Desktop/clothing/app/assets/stylesheets/users.scss */
+input[type="file" i] {
+  align-items: baseline;
+  color: white;
+  text-align: start;
+}

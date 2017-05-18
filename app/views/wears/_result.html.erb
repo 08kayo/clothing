@@ -1,0 +1,12 @@
+<% @wears.each do |wear| %>
+  <h2>
+  検索結果
+  </h2>
+    <p>検索ワード：<%=wear.text %></p>
+  <tr>
+    <td><%= image_tag wear.image.url, :size => '250x250' %></td>
+    <%= simple_format(wear.text) %>
+    <ul style="list-style:none">
+    </ul>
+  </tr>
+  <% end %>
