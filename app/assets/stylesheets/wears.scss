@@ -49,6 +49,18 @@ input#wear_wear_list {
   height: 50px;
 }
 
+
+form {
+    padding-left: 20px;
+}
+
+
+select {
+    background-color: #DDDDDD;
+    color: #DDDDDD;
+}
+
+
 .file input{
   display:none;
   color: white;
@@ -59,33 +71,54 @@ input#wear_image {
   color: white;
 }
 
+input#text {
+    width: 300px;
+    height: 20px;
+}
 input[type="file" i] {
     align-items: baseline;
     color: white;
     text-align: start;
 }
 
-input[type="submit"] {
-  width: 90px;
-  height: 50px;
- margin-top: 30px;
- margin-left: 330px;
- font-size: 1.1em;
- align-items: flex-start;
- text-align: center;
- cursor: default;
- color: #434851;
- background-color: buttonface;
- box-sizing: border-box;
- padding: 2px 6px 3px;
- border-width: 2px;
- border-style: outset;
- border-color: white;
- border-image: initial;
-     -moz-border-radius: 30px;
-    -webkit-border-radius: 30px;
-    border-radius: 30px;
-
-
+input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: #434851;
+    background-color: buttonface;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: white;
+    border-image: initial;
+    -moz-border-radius: 30px;
+     -webkit-border-radius: 30px;
+     border-radius: 30px;
 }
+
+// input[type="submit"] {
+//   width: 90px;
+//   height: 50px;
+//  margin-top: 30px;
+//  margin-left: 330px;
+//  font-size: 1.1em;
+//  align-items: flex-start;
+//  text-align: center;
+//  cursor: default;
+//  color: #434851;
+//  background-color: buttonface;
+//  box-sizing: border-box;
+//  padding: 2px 6px 3px;
+//  border-width: 2px;
+//  border-style: outset;
+//  border-color: white;
+//  border-image: initial;
+//      -moz-border-radius: 30px;
+//     -webkit-border-radius: 30px;
+//     border-radius: 30px;
+
+
+// }
 

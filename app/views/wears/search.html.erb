@@ -1,3 +1,4 @@
+ <%= stylesheet_link_tag    'wears', media: 'all', 'data-turbolinks-track' => true %>
  <div class="contents row">
   <h1>
    検索
@@ -15,7 +16,8 @@
   金額から探す
 </h2>
 <%= form_tag('/wears/search', method: :get) do %>
-<select name="price">
+<select name="price" style="font-size:10pt;color:#aa8888;background-color:white">
+>
   <option value="">金額を選択</option>
   <option value="1">〜999円</option>
   <option value="2">1000〜1999円</option>
@@ -35,7 +37,7 @@
   <option value="16">15000〜15999円</option>
   <option value="17">16000円〜</option>
 </select>
-<%= submit_tag "検索" %>
+<%= submit_tag '検索' %>
 <br>
 <% end %>
 <br>
