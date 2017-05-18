@@ -11,12 +11,16 @@
   <% end %>
   <% else %>
   <%= button_to wear_likes_path(wear), id: "like-button", remote: true do %>
-  <%= evil_icon 'ei-star', size: :m %>
+  <div class="star">
+    <%= evil_icon 'ei-star', size: :s %>
+  </div>
   <% end %>
   <% end %>
   <% else %>
-  <%= evil_icon 'ei-star', size: :m %>
-  <span>
-    <%= wear.like_count %>
-  </span>
+  <div class="star_like">
+    <%= evil_icon 'ei-star', size: :s %>
+    <span>
+      <%= wear.like_count %>
+    </span>
+  </div>
   <% end %>

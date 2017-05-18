@@ -54,25 +54,21 @@
     <div id="tabmenu">
       <ul style="list-style:none">
         <li>
-          <%= evil_icon 'ei-archive', size: :m %><br>
-          <%= link_to 'ホーム', "/wears/index", method: :get %>
-        </li>
-        <li>
-          <%= evil_icon 'ei-search', size: :m %><br>
-          <%= link_to '検索', "/wears/search}", method: :get %>
-        </li>
-        <li>
-          <%= evil_icon 'ei-star', size: :m %><br>
-          <%= link_to 'お気に入り', "/wears/favorite}", method: :get %>
-        </li>
-        <li>
-          <%= evil_icon 'ei-camera', size: :m %><br>
-          <%= link_to '投稿', "/wears/new", method: :get %>
+          <a href="http://localhost:3000"><%= evil_icon 'ei-archive', class: "custom-class" %><br><span class="category-name"> ホーム</span></a>
 
         </li>
         <li>
-          <%= evil_icon 'ei-user', size: :m %><br>
-          <a href="http://localhost:3000/users/<%= current_user.id if current_user %>"><span class= "category-name">マイページ</span></a>
+          <a href="http://localhost:3000/wears/search"><%= evil_icon 'ei-search', class: "custom-class" %><br><span class="category-name"> 検索</span></a>
+
+        </li>
+        <li>
+          <a href="http://localhost:3000/users/<%= current_user.id if current_user %>/favorite"><%= evil_icon 'ei-star', class: "custom-class" %><br><span class="category- name">お気に入り</span></a>         
+          </li>
+        <li>
+          <a href="http://localhost:3000/wears/new"><%= evil_icon 'ei-camera', class: "custom-class" %><br><span class="category- name">投稿</span></a>
+        </li>
+        <li>          
+          <a href="http://localhost:3000/users/<%= current_user.id if current_user %>"><%= evil_icon 'ei-user', class: "custom-class" %><br><span class= "category-name">マイページ</span></a>
 
         </li>
       </ul>

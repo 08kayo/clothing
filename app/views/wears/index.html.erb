@@ -1,4 +1,4 @@
-<h1>おとこーで -OTOCOORDE-</h1>
+<h1>おとこーで <br>-OTOCOORDE-</h1>
 
 
 <h2>今日のFlickrコーデ</h2>
@@ -8,16 +8,15 @@
 
   <div align="center">
     <% @images.each do |image| %>
-    <%= image_tag (FlickRaw.url image), :size => "250x250" %>
+    <%= image_tag (FlickRaw.url image), :size => "120x120" %>
     <% end %>
   </div>
 
   <h2>ユーザーのコーデ</h2>
   <div align="center">
     <% @wears.each do |wear| %>
-    <%= render "likes/like", wear: wear %>
     <div class="content_post" >
-      <%= image_tag wear.image, :size => "250x250" %>
+      <%= image_tag wear.image, :size => "100x200" %>
       <% if user_signed_in? && current_user.id == wear.user_id %>
       <div class="more">
 
@@ -26,6 +25,7 @@
         </ul>
       </div>
       <% end %>
+    <div class=like>
       <ul style="list-style:none">   
 
         <%= simple_format(wear.text) %>
@@ -34,7 +34,9 @@
             <span>投稿者</span><%= wear.user.nickname %>
           </a>
         </span>
+    <%= render "likes/like", wear: wear %>
       </ul>
+    </div>
     </div>
   </div>
   <% end %>
