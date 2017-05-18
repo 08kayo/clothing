@@ -33,8 +33,8 @@ textarea {
   border-color: initial;
   border-image: initial;
   padding: 2px;
-  width: 400px;
-  height: 100px;
+  width: 320px;
+  height: 150px;
 }
 
 input#wear_wear_list {
@@ -56,13 +56,14 @@ form {
 
 
 select {
-    background-color: #DDDDDD;
-    color: #DDDDDD;
+    background-color: white;
+    height: 30px;
+    margin-top: 10px;
+    font-size: 15px;
 }
 
 
 .file input{
-  display:none;
   color: white;
 }
 
@@ -96,6 +97,20 @@ input[type="button" i], input[type="submit" i], input[type="reset" i], input[typ
     -moz-border-radius: 30px;
      -webkit-border-radius: 30px;
      border-radius: 30px;
+     margin-top: 40px;
+    width: 90px;
+    height: 50px;
+    font-size: initial;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label.btn.btn-default {
+    border-color: white;
+    border-radius: 30px;
+    color: black;
+    background-color: #DDDDDD;
+    width: 100px;
 }
 
 // input[type="submit"] {

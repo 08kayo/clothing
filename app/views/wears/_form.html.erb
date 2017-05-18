@@ -36,7 +36,8 @@
   </select></input><br>
 </br>
 
-<%= f.file_field :image %>
+<%= f.label :ファイルを添付する, class: "btn btn-default" %>
+<%= f.file_field :image,  class: "fileInput",style: "display:none;" %>
 </div>
 
 
