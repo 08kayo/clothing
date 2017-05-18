@@ -1,23 +1,24 @@
-  <div class="contents row" >
-    <h2><%= @nickname %>さんの投稿一覧</h2>
-    <% @wears.each do |wear| %>
-      <tr>
-        <td><%= image_tag wear.image.url, :size => '250x250' %></td>
-        <%= simple_format(wear.text) %>
+<%= stylesheet_link_tag    'users', media: 'all', 'data-turbolinks-track' => true %>
+<div class="contents row" >
+  <h1><%= @nickname %>さんの投稿一覧</h1>
+  <% @wears.each do |wear| %>
+  <tr>
+    <td><%= image_tag wear.image.url, :size => '250x250' %></td>
+    <%= simple_format(wear.text) %>
     <ul style="list-style:none">
-        <li><%= link_to '削除', "/wears/#{wear.id}", method: :delete %></li>
-        
-      </tr>
-    <% end %>
-  </div>
+      <li><%= link_to '削除', "/wears/#{wear.id}", method: :delete %></li>
+    </ul>
+  </tr>
+  <% end %>
+</div>
 
-    <tbody>
-    <!-- 削除リンクの為にindex付きのメソッドを使用 -->
-    <% @user.wears.each_with_index do |wear, i| %>
-      <tr>
-        <td><%= link_to "削除",favorite_path(@favorites[i][:id]), method: :delete %></td>
-        <td><%= wear.name %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<tbody>
+  <!-- 削除リンクの為にindex付きのメソッドを使用 -->
+  <% @user.wears.each_with_index do |wear, i| %>
+  <tr>
+    <td><%= link_to "削除",favorite_path(@favorites[i][:id]), method: :delete %></td>
+    <td><%= wear.name %></td>
+  </tr>
+</div>
+<% end %>
+</tbody>

@@ -1,8 +1,34 @@
 <h1>
-検索する
 </h1>
-<%= form_tag stories_path, :method => "get" do %>
+フリーワードで探す
+<%= form_tag wears_search_path, :method => "get" do %>
 <%= text_field_tag :text, params[:text] %>
 <%= submit_tag "検索"%>
 <% end %>
+<br>
+</br>
+金額から探す
+<%= form_tag('/wears/#{@wear.price}', method: :get) do %>
+<select name="price">
+  <option value="">金額を選択</option>
+  <option value="1">〜999円</option>
+  <option value="2">1000〜1999円</option>
+  <option value="3">2000〜2999円</option>
+  <option value="4">3000〜3999円</option>
+  <option value="5">4000〜4999円</option>
+  <option value="6">5000〜5999円</option>
+  <option value="7">6000〜6999円</option>
+  <option value="8">7000〜7999円</option>
+  <option value="9">8000〜8999円</option>
+  <option value="10">9000〜9999円</option>
+  <option value="11">10000〜10999円</option>
+  <option value="12">11000〜11999円</option>
+  <option value="13">12000〜12999円</option>
+  <option value="14">13000〜13999円</option>
+  <option value="15">14000〜14999円</option>
+  <option value="16">15000〜15999円</option>
+  <option value="17">16000円〜</option>
+</select><%= submit_tag "検索" %></input><br>
+<% end %></br>
 
+<%= render(:partial => "result", :object => @result) %>

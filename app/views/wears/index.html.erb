@@ -7,36 +7,35 @@
   <%= image_tag @url %>
 
   <div align="center">
-  <% @images.each do |image| %>
-  <%= image_tag (FlickRaw.url image), :size => "250x250" %>
-  <% end %>
+    <% @images.each do |image| %>
+    <%= image_tag (FlickRaw.url image), :size => "250x250" %>
+    <% end %>
   </div>
 
-<h2>ユーザーのコーデ</h2>
+  <h2>ユーザーのコーデ</h2>
   <div align="center">
-  <% @wears.each do |wear| %>
-  <%= render "likes/like", wear: wear %>
-  <div class="content_post" >
-    <%= image_tag wear.image, :size => "250x250" %>
-    <% if user_signed_in? && current_user.id == wear.user_id %>
-    <div class="more">
+    <% @wears.each do |wear| %>
+    <%= render "likes/like", wear: wear %>
+    <div class="content_post" >
+      <%= image_tag wear.image, :size => "250x250" %>
+      <% if user_signed_in? && current_user.id == wear.user_id %>
+      <div class="more">
 
-      <ul class="more_list">
-        <!-- <ul style="list-style:none"> -->
+        <ul class="more_list">
+          <!-- <ul style="list-style:none"> -->
+        </ul>
+      </div>
+      <% end %>
+      <ul style="list-style:none">   
+
+        <%= simple_format(wear.text) %>
+        <span class="name">
+          <a href="/users/<%= wear.user_id %>">
+            <span>投稿者</span><%= wear.user.nickname %>
+          </a>
+        </span>
       </ul>
     </div>
-    <% end %>
-    <ul style="list-style:none">   
-
-      <%= simple_format(wear.text) %>
-      <span class="name">
-        <a href="/users/<%= wear.user_id %>">
-          <span>投稿者</span><%= wear.user.nickname %>
-        </a>
-      </span>
-    </ul>
-  </div>
   </div>
   <% end %>
-</div>
 </div>

@@ -54,7 +54,14 @@ class WearsController < ApplicationController
    end
 
    def search #投稿の検索
-     @wears = Wear.where('text LIKE(?)', "%#{params[:text]}%").limit(20)
+     if params[:text] != nil
+      @wears = Wear.where('text LIKE(?)', params[:text]).limit(20)
+    elsif params[:price] != nil
+      @wears = []
+    else
+      @wears = []
+    end
+
     end
 
     private

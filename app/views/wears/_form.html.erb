@@ -1,29 +1,47 @@
 <%= form_for(@wear) do |f| %>
-  <% if @wear.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@wear.errors.count, "error") %> prohibited this item from being saved:</h2>
+<% if @wear.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@wear.errors.count, "error") %> prohibited this item from being saved:</h2>
 
-      <ul>
-      <% @wear.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% @wear.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= f.label :コメント %><br>
-    <%= f.text_area :text %>
-    <%= f.file_field :image %>
-  </div>
-  
- <div class="field">
-    <%= f.label :wear_list, "タグ" %><br>
-    <%= text_field_tag 'wear[wear_list]', @wear.wear_list.join(',') %>
-  </div>
+<div class="field">
+  <%= f.label :コメント %><br>
+  <%= f.text_area :text %>
+  <select name="price" placeholder= "金額を選択" required>
+    <option value="">金額を選択</option>
+    <option value="1">〜999円</option>
+    <option value="2">1000〜1999円</option>
+    <option value="3">2000〜2999円</option>
+    <option value="4">3000〜3999円</option>
+    <option value="5">4000〜4999円</option>
+    <option value="6">5000〜5999円</option>
+    <option value="7">6000〜6999円</option>
+    <option value="8">7000〜7999円</option>
+    <option value="9">8000〜8999円</option>
+    <option value="10">9000〜9999円</option>
+    <option value="11">10000〜10999円</option>
+    <option value="12">11000〜11999円</option>
+    <option value="13">12000〜12999円</option>
+    <option value="14">13000〜13999円</option>
+    <option value="15">14000〜14999円</option>
+    <option value="16">15000〜15999円</option>
+    <option value="17">16000円〜</option>
+  </select></input><br>
+</br>
 
-  <div class="actions">
-    <%= f.submit "投稿する"%>
-  </div>
+<%= f.file_field :image %>
+</div>
+
+
+<div class="actions">
+  <%= f.submit "投稿する"%>
+</div>
 
 <% end %>
