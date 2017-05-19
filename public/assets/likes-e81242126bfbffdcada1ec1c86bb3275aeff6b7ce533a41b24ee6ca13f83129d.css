@@ -1,0 +1,19 @@
+/* line 1, /Users/tech-camp/Desktop/clothing/app/assets/stylesheets/likes.scss */
+button#like-button {
+  color: yellow;
+  background-color: #778899;
+}
+
+/* line 5, /Users/tech-camp/Desktop/clothing/app/assets/stylesheets/likes.scss */
+.star .icon {
+  width: 30px;
+  height: 30px;
+  color: red;
+}
+
+/* line 11, /Users/tech-camp/Desktop/clothing/app/assets/stylesheets/likes.scss */
+.star_like .icon {
+  width: 30px;
+  height: 30px;
+  color: blue;
+}

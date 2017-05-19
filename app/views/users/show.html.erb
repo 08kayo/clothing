@@ -1,6 +1,7 @@
-<%= stylesheet_link_tag    'users', media: 'all', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 <div class="contents row" >
   <h1><%= @nickname %>さんの投稿一覧</h1>
+  
   <% @wears.each do |wear| %>
   <tr>
     <td><%= image_tag wear.image.url, :size => '250x250' %></td>

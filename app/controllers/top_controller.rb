@@ -10,7 +10,7 @@ word = "tshirt"
 # sort: ソート順。デフォルトは「date-posted-desc」。
 #       「relevance」は関連度の高さでソート。
 # per_page: 検索した時の取得件数。デフォルトは100件。
-images = flickr.photos.search(tags: word, sort: "relevance", per_page: 3)
+images = flickr.photos.search(tags: word, sort: "relevance", per_page: 2)
 
 images.each do |image|
     info = flickr.photos.getInfo :photo_id => image.id, :secret => image.secret

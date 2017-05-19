@@ -15,8 +15,8 @@
   <h2>ユーザーのコーデ</h2>
   <div align="center">
     <% @wears.each do |wear| %>
-    <div class="content_post" >
-      <%= image_tag wear.image, :size => "100x200" %>
+    <div class="content_post" align="center">
+      <%= image_tag wear.image, :size => "250x250" %>
       <% if user_signed_in? && current_user.id == wear.user_id %>
       <div class="more">
 
@@ -25,18 +25,18 @@
         </ul>
       </div>
       <% end %>
-    <div class=like>
-      <ul style="list-style:none">   
+      <div class=like>
+        <ul style="list-style:none">   
 
-        <%= simple_format(wear.text) %>
-        <span class="name">
-          <a href="/users/<%= wear.user_id %>">
-            <span>投稿者</span><%= wear.user.nickname %>
-          </a>
-        </span>
-    <%= render "likes/like", wear: wear %>
-      </ul>
-    </div>
+          <%= simple_format(wear.text) %>
+          <span class="name">
+            <a href="/users/<%= wear.user_id %>">
+              <span>投稿者</span><%= wear.user.nickname %>
+            </a>
+          </span>
+          <%= render "likes/like", wear: wear %>
+        </ul>
+      </div>
     </div>
   </div>
   <% end %>

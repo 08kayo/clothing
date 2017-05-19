@@ -54,21 +54,21 @@
     <div id="tabmenu">
       <ul style="list-style:none">
         <li>
-          <a href="http://localhost:3000"><%= evil_icon 'ei-archive', class: "custom-class" %><br><span class="category-name"> ホーム</span></a>
+          <a href="https://otocoorde.herokuapp.com/"><%= evil_icon 'ei-archive', class: "custom-class" %><br><span class="category-name"> ホーム</span></a>
 
         </li>
         <li>
-          <a href="http://localhost:3000/wears/search"><%= evil_icon 'ei-search', class: "custom-class" %><br><span class="category-name"> 検索</span></a>
+          <a href="https://otocoorde.herokuapp.com/wears/search"><%= evil_icon 'ei-search', class: "custom-class" %><br><span class="category-name"> 検索</span></a>
 
         </li>
         <li>
-          <a href="http://localhost:3000/users/<%= current_user.id if current_user %>/favorite"><%= evil_icon 'ei-star', class: "custom-class" %><br><span class="category- name">お気に入り</span></a>         
+          <a href="https://otocoorde.herokuapp.com/users/<%= current_user.id if current_user %>/favorite"><%= evil_icon 'ei-star', class: "custom-class" %><br><span class="category- name">お気に入り</span></a>         
           </li>
         <li>
-          <a href="http://localhost:3000/wears/new"><%= evil_icon 'ei-camera', class: "custom-class" %><br><span class="category- name">投稿</span></a>
+          <a href="https://otocoorde.herokuapp.com/wears/new"><%= evil_icon 'ei-camera', class: "custom-class" %><br><span class="category- name">投稿</span></a>
         </li>
         <li>          
-          <a href="http://localhost:3000/users/<%= current_user.id if current_user %>"><%= evil_icon 'ei-user', class: "custom-class" %><br><span class= "category-name">マイページ</span></a>
+          <a href="https://otocoorde.herokuapp.com/users/<%= current_user.id if current_user %>"><%= evil_icon 'ei-user', class: "custom-class" %><br><span class= "category-name">マイページ</span></a>
 
         </li>
       </ul>
@@ -78,6 +78,5 @@
 
 
 
-  <script src="iscroll.js"></script>
 </body>
 </html>
